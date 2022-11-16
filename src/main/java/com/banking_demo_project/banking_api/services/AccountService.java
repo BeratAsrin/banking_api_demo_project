@@ -1,7 +1,7 @@
 package com.banking_demo_project.banking_api.services;
 
-import com.banking_demo_project.banking_api.entities.models.Account;
-import com.banking_demo_project.banking_api.entities.req.AccountReq;
+import com.banking_demo_project.banking_api.models.entities.Account;
+import com.banking_demo_project.banking_api.models.req.AccountReq;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

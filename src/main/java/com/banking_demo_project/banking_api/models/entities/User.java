@@ -1,4 +1,4 @@
-package com.banking_demo_project.banking_api.entities.models;
+package com.banking_demo_project.banking_api.models.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

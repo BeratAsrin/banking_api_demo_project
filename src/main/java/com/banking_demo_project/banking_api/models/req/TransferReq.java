@@ -1,6 +1,5 @@
-package com.banking_demo_project.banking_api.entities.req;
+package com.banking_demo_project.banking_api.models.req;
 
-import com.banking_demo_project.banking_api.entities.models.Account;
 import lombok.Data;
 
 @Data

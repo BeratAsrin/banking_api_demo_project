@@ -1,17 +1,15 @@
 package com.banking_demo_project.banking_api.controllers;
 
-import com.banking_demo_project.banking_api.entities.models.Account;
-import com.banking_demo_project.banking_api.entities.models.User;
-import com.banking_demo_project.banking_api.entities.req.AccountReq;
-import com.banking_demo_project.banking_api.entities.req.TransferReq;
-import com.banking_demo_project.banking_api.entities.req.UserReq;
+import com.banking_demo_project.banking_api.models.entities.Account;
+import com.banking_demo_project.banking_api.models.entities.User;
+import com.banking_demo_project.banking_api.models.req.AccountReq;
+import com.banking_demo_project.banking_api.models.req.TransferReq;
+import com.banking_demo_project.banking_api.models.req.UserReq;
 import com.banking_demo_project.banking_api.services.AccountService;
 import com.banking_demo_project.banking_api.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @RestController

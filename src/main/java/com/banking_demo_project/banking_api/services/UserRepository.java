@@ -1,6 +1,6 @@
 package com.banking_demo_project.banking_api.services;
 
-import com.banking_demo_project.banking_api.entities.models.User;
+import com.banking_demo_project.banking_api.models.entities.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
