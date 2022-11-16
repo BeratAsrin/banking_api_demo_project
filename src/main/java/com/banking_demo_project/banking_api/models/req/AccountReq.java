@@ -9,6 +9,7 @@ public class AccountReq{
     private String accountId;
 
     private String userId;
+    private String userTckn;
     private float balance;
     private String currency;
 }

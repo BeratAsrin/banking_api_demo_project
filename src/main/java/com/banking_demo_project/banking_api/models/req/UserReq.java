@@ -8,6 +8,7 @@ public class UserReq {
     @Id
     private String userId;
 
+    private String tckn;
     private String name;
     private String surname;
     private String email;

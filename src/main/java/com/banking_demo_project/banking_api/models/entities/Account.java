@@ -14,11 +14,12 @@ public class Account {
     @Id
     private String accountId;
     private String userId;
-
+    private String userTckn;
     private float balance;
     private String currency;
 
-    public Account(String userId, float balance, String currency) {
+    public Account(String userTckn, String userId, float balance, String currency) {
+        this.userTckn = userTckn;
         this.userId = userId;
         this.balance = balance;
         this.currency = currency;

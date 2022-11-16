@@ -13,11 +13,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
     private String userId;
+
+    private String tckn;
     private String name;
     private String surname;
     private String email;
 
-    public User(String name, String surname, String email) {
+    public User(String tckn, String name, String surname, String email) {
+        this.tckn = tckn;
         this.name = name;
         this.surname = surname;
         this.email = email;

@@ -21,29 +21,57 @@ public class UserService {
     MongoTemplate mongoTemplate;
 
     public User createNewUser(UserReq userReq){
-        User newUser = new User(userReq.getName(), userReq.getSurname(), userReq.getEmail());
-        userRepository.insert(newUser);
-        return newUser;
+        User newUser = new User(userReq.getTckn(), userReq.getName(), userReq.getSurname(), userReq.getEmail());
+        try{
+            userRepository.insert(newUser);
+            return newUser;
+        } catch (Exception e){
+            return null;
+        }
+
     }
 
     public List<User> getAllUsers(){
-        return userRepository.findAll();
+        try{
+            return userRepository.findAll();
+        } catch (Exception e){
+            return null;
+        }
     }
 
     public User getUserById(String id){
-        Query query = new Query();
-        query.addCriteria(Criteria.where("_id").is(id));
-        return mongoTemplate.find(query, User.class).get(0);
+        try {
+            Query query = new Query();
+            query.addCriteria(Criteria.where("_id").is(id));
+            return mongoTemplate.find(query, User.class).get(0);
+        } catch (Exception e){
+            return null;
+        }
+    }
+
+    public User getUserByTCKN(String tckn){
+        try {
+            Query query = new Query();
+            query.addCriteria(Criteria.where("tckn").is(tckn));
+            return mongoTemplate.find(query, User.class).get(0);
+        } catch (Exception e){
+            return null;
+        }
     }
 
     public User updateData(UserReq userReq){
-        Query query = new Query();
-        query.addCriteria(Criteria.where("_id").is(userReq.getUserId()));
-        Update update = new Update()
-                .set("name", userReq.getName())
-                .set("surname", userReq.getSurname())
-                .set("email", userReq.getEmail());
-        mongoTemplate.updateFirst(query, update, "users");
-        return getUserById(userReq.getUserId());
+        try{
+            Query query = new Query();
+            query.addCriteria(Criteria.where("_id").is(userReq.getUserId()));
+            Update update = new Update()
+                    .set("name", userReq.getName())
+                    .set("surname", userReq.getSurname())
+                    .set("email", userReq.getEmail());
+            mongoTemplate.updateFirst(query, update, "users");
+            return getUserById(userReq.getUserId());
+        } catch (Exception e){
+            return null;
+        }
+
     }
 }
