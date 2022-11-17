@@ -97,7 +97,7 @@ public class Controller {
         return new ErrorRes("DB connection error.");
     }
 
-    @DeleteMapping("/account/user/delete")
+    @DeleteMapping("/account/delete")
     public Res deleteAccountOfUser(@RequestBody AccountReq accountReq){
         if (accountService.deleteAccount(accountReq.getAccountId())){
             return new SuccessRes("", "Account with id " + accountReq.getAccountId() + " is deleted.");
